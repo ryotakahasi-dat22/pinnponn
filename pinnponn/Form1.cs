@@ -20,19 +20,23 @@ namespace pinnponn
         const int EnemyMax = 10;
         const int ItemMax = 19;
         const int ChrMax = PlayerMax + EnemyMax + ItemMax;
-        Label[] chrs = new Label[ChrMax];
-        int[] vx = new int[ChrMax];
-        int[] vy = new int[ChrMax];
+        //Label[] chrs = new Label[ChrMax];
+        //int[] vx = new int[ChrMax];
+        //int[] vy = new int[ChrMax];
+        int vx = 10;
+        int vvx = 10;
+        int vvy = 10;
         const int PlayerIndex = 0;
         const int EnemyIndex = PlayerMax + PlayerMax;
         const int ItemIndex = EnemyMax + EnemyMax;
-        const int StartTime = 100;
+        const int StartTime = 1000;
 
         static Random rand = new Random();
 
         int itemCount = 0;
         int time = 0;
         int hiscore = 0;
+        int tekiCount = 0;
 
         enum State
         {
@@ -89,6 +93,23 @@ namespace pinnponn
             timeLabel.Text = "Time" + time;
 
             Point mp = PointToClient(MousePosition);
+
+            PR.Top = mp.Y - PR.Height / 2;
+
+            EN.Top += vx;
+
+            if(EN.Top < 0)
+            {
+                vx = Math.Abs(vx);
+            }
+            if (EN.Bottom > ClientSize.Height)
+            {
+                vx = -Math.Abs(vx);
+            }
+
+            Tama.Left += vvx;
+            Tama.Top += vvy;
+
 
             /*for (int i = EnemyIndex; i < ChrMax; i++)
             {
@@ -159,7 +180,7 @@ namespace pinnponn
                     gameOverLabel.Visible = false;
                     clearLabel.Visible = false;
                     titleButton.Visible = false;
-                    timeLabel.Text = "Time 100";
+                    timeLabel.Text = "Time 1000";
                     break;
 
                 case State.Game:
@@ -167,10 +188,14 @@ namespace pinnponn
                     copyrightLabel.Visible = false;
                     startButton.Visible = false;
 
+                    vvx = rand.Next(-SpeedMax, SpeedMax + 1);
+                    vvy = rand.Next(-SpeedMax, SpeedMax + 1);
+                    Tama.Visible = true;
 
                     itemCount = ItemMax - 9;
                     time = StartTime + 1;
-                    leftLabel.Text = $"š:{itemCount:00}";
+                    leftLabel.Text = $"{itemCount:00}";
+                    rightLabel.Text = $"{tekiCount:00}";
 
                     break;
 

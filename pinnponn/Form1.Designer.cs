@@ -36,7 +36,7 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.PR = new System.Windows.Forms.Label();
             this.Tama = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.EN = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.startButton = new System.Windows.Forms.Button();
             this.leftLabel = new System.Windows.Forms.Label();
@@ -119,16 +119,16 @@
             this.Tama.TabIndex = 15;
             this.Tama.Text = "   ";
             // 
-            // label1
+            // EN
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(769, 159);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(19, 120);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "  \r\n  \r\n   \r\n  \r\n    \r\n  \r\n\r\n\r\n";
+            this.EN.AutoSize = true;
+            this.EN.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.EN.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EN.Location = new System.Drawing.Point(769, 159);
+            this.EN.Name = "EN";
+            this.EN.Size = new System.Drawing.Size(19, 120);
+            this.EN.TabIndex = 16;
+            this.EN.Text = "  \r\n  \r\n   \r\n  \r\n    \r\n  \r\n\r\n\r\n";
             // 
             // timer1
             // 
@@ -197,7 +197,7 @@
             this.Controls.Add(this.Tama);
             this.Controls.Add(this.leftLabel);
             this.Controls.Add(this.startButton);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.EN);
             this.Controls.Add(this.PR);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.gameOverLabel);
@@ -221,7 +221,7 @@
         private Label titleLabel;
         private Label PR;
         private Label Tama;
-        private Label label1;
+        private Label EN;
         private System.Windows.Forms.Timer timer1;
         private Button startButton;
         private Label leftLabel;
