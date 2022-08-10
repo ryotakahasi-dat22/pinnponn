@@ -39,6 +39,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.startButton = new System.Windows.Forms.Button();
+            this.leftLabel = new System.Windows.Forms.Label();
+            this.rightLabel = new System.Windows.Forms.Label();
+            this.senlabel = new System.Windows.Forms.Label();
+            this.timeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleButton
@@ -128,6 +132,7 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // startButton
@@ -140,21 +145,66 @@
             this.startButton.TabIndex = 17;
             this.startButton.Text = "スタート！";
             this.startButton.UseVisualStyleBackColor = false;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            // 
+            // leftLabel
+            // 
+            this.leftLabel.AutoSize = true;
+            this.leftLabel.Font = new System.Drawing.Font("Yu Gothic UI", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.leftLabel.Location = new System.Drawing.Point(121, 9);
+            this.leftLabel.Name = "leftLabel";
+            this.leftLabel.Size = new System.Drawing.Size(88, 106);
+            this.leftLabel.TabIndex = 18;
+            this.leftLabel.Text = "0";
+            // 
+            // rightLabel
+            // 
+            this.rightLabel.AutoSize = true;
+            this.rightLabel.Font = new System.Drawing.Font("Yu Gothic UI", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rightLabel.Location = new System.Drawing.Point(595, 9);
+            this.rightLabel.Name = "rightLabel";
+            this.rightLabel.Size = new System.Drawing.Size(88, 106);
+            this.rightLabel.TabIndex = 19;
+            this.rightLabel.Text = "0";
+            // 
+            // senlabel
+            // 
+            this.senlabel.AutoSize = true;
+            this.senlabel.Font = new System.Drawing.Font("Yu Gothic UI", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.senlabel.Location = new System.Drawing.Point(331, -47);
+            this.senlabel.Name = "senlabel";
+            this.senlabel.Size = new System.Drawing.Size(129, 177);
+            this.senlabel.TabIndex = 20;
+            this.senlabel.Text = "-";
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Font = new System.Drawing.Font("Yu Gothic UI", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.timeLabel.Location = new System.Drawing.Point(507, 348);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(67, 81);
+            this.timeLabel.TabIndex = 21;
+            this.timeLabel.Text = "0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.timeLabel);
+            this.Controls.Add(this.rightLabel);
+            this.Controls.Add(this.Tama);
+            this.Controls.Add(this.leftLabel);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Tama);
             this.Controls.Add(this.PR);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.gameOverLabel);
             this.Controls.Add(this.clearLabel);
             this.Controls.Add(this.copyrightLabel);
             this.Controls.Add(this.titleButton);
+            this.Controls.Add(this.senlabel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -174,5 +224,9 @@
         private Label label1;
         private System.Windows.Forms.Timer timer1;
         private Button startButton;
+        private Label leftLabel;
+        private Label rightLabel;
+        private Label senlabel;
+        private Label timeLabel;
     }
 }
