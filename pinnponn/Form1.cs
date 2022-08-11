@@ -16,26 +16,15 @@ namespace pinnponn
         const bool isDebug = true;
 
         const int SpeedMax = 10;
-        const int PlayerMax = 1;
-        const int EnemyMax = 10;
-        const int ItemMax = 19;
-        const int ChrMax = PlayerMax + EnemyMax + ItemMax;
-        //Label[] chrs = new Label[ChrMax];
-        //int[] vx = new int[ChrMax];
-        //int[] vy = new int[ChrMax];
         int vx = 10;
         int vvx = 10;
         int vvy = 10;
-        const int PlayerIndex = 0;
-        const int EnemyIndex = PlayerMax + PlayerMax;
-        const int ItemIndex = EnemyMax + EnemyMax;
         const int StartTime = 1000;
 
         static Random rand = new Random();
 
         int itemCount = 0;
         int time = 0;
-        int hiscore = 0;
         int tekiCount = 0;
 
         enum State
@@ -162,76 +151,6 @@ namespace pinnponn
                     nextState = State.Clear;
                 }
             }
-            /*if ((PR.Width >= Tama.Left)
-                && (PR.Width < Tama.Right)
-                && (PR.Height >= Tama.Top)
-                && (PR.Height < Tama.Bottom))
-            {
-                if (Tama.Left < 0)
-                {
-                    vvx = Math.Abs(vvx);
-                }
-                if (Tama.Top < 0)
-                {
-                    vvy = Math.Abs(vvy);
-                }
-                if (Tama.Right > ClientSize.Width)
-                {
-                    vvx = -Math.Abs(vvx);
-                }
-                if (Tama.Bottom > ClientSize.Height)
-                {
-                    vvy = -Math.Abs(vvy);
-                }
-            }*/
-
-            /*for (int i = EnemyIndex; i < ChrMax; i++)
-            {
-                chrs[i].Left += vx[i];
-                chrs[i].Top += vy[i];
-
-                if (chrs[i].Left < 0)
-                {
-                    vx[i] = Math.Abs(vx[i]);
-                }
-                if (chrs[i].Top < 0)
-                {
-                    vy[i] = Math.Abs(vy[i]);
-                }
-                if (chrs[i].Right > ClientSize.Width)
-                {
-                    vx[i] = -Math.Abs(vx[i]);
-                }
-                if (chrs[i].Bottom > ClientSize.Height)
-                {
-                    vy[i] = -Math.Abs(vy[i]);
-                }
-
-                if ((mp.X >= chrs[i].Left)
-                    && (mp.X < chrs[i].Right)
-                    && (mp.Y >= chrs[i].Top)
-                    && (mp.Y < chrs[i].Bottom)
-                    )
-                {
-                    if (i < ItemIndex)
-                    {
-                        nextState = State.Gameover;
-                    }
-                    else
-                    {
-                        //chrs[i].Visible = false;
-                        itemCount--;
-                        if (itemCount <= 0)
-                        {
-                            nextState = State.Clear;
-                        }
-                        leftLabel.Text = $"š:{itemCount:00}";
-                        vx[i] = 0;
-                        vy[i] = 0;
-                        chrs[i].Left = 10000;
-                    }
-                }
-            }*/
 
             if ((time <= 0)
                 && (nextState == State.None))
@@ -266,7 +185,6 @@ namespace pinnponn
                     vvy = rand.Next(-SpeedMax, SpeedMax + 1);
                     Tama.Visible = true;
 
-                    //itemCount = ItemMax - 9;
                     time = StartTime + 1;
                     leftLabel.Text = $"{itemCount:0}";
                     rightLabel.Text = $"{tekiCount:0}";
@@ -281,12 +199,6 @@ namespace pinnponn
                 case State.Clear:
                     clearLabel.Visible = true;
                     titleButton.Visible = true;
-                    /*hiLabel.Visible = true;
-                    if (time > hiscore)
-                    {
-                        hiscore = time;
-                        hiLabel.Text = "HighScore" + hiscore;
-                    }*/
                     break;
 
             }
