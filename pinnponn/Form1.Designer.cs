@@ -54,6 +54,7 @@
             this.titleButton.TabIndex = 9;
             this.titleButton.Text = "タイトルへ";
             this.titleButton.UseVisualStyleBackColor = true;
+            this.titleButton.Click += new System.EventHandler(this.titleButton_Click_1);
             // 
             // copyrightLabel
             // 
@@ -113,7 +114,7 @@
             this.Tama.AutoSize = true;
             this.Tama.BackColor = System.Drawing.Color.Gold;
             this.Tama.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Tama.Location = new System.Drawing.Point(701, 231);
+            this.Tama.Location = new System.Drawing.Point(372, 200);
             this.Tama.Name = "Tama";
             this.Tama.Size = new System.Drawing.Size(38, 37);
             this.Tama.TabIndex = 15;

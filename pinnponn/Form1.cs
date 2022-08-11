@@ -138,7 +138,29 @@ namespace pinnponn
 
             if (Tama.Left < 0)
             {
-                itemCount += 1;
+                tekiCount++;
+                rightLabel.Text = $"{tekiCount:0}";
+                Tama.Left = ClientSize.Width/2;
+                Tama.Top = ClientSize.Height/2;
+                vvx = -vvx;
+                vvy = -vvy;
+                if (tekiCount >= 2)
+                {
+                    nextState = State.Gameover;
+                }
+            }
+            if (Tama.Right > ClientSize.Width)
+            {
+                itemCount++;
+                leftLabel.Text = $"{itemCount:0}";
+                Tama.Left = ClientSize.Width / 2;
+                Tama.Top = ClientSize.Height / 2;
+                vvx = -vvx;
+                vvy = -vvy;
+                if (itemCount >= 2)
+                {
+                    nextState = State.Clear;
+                }
             }
             /*if ((PR.Width >= Tama.Left)
                 && (PR.Width < Tama.Right)
@@ -273,6 +295,22 @@ namespace pinnponn
         private void startButton_Click(object sender, EventArgs e)
         {
             nextState = State.Game;
+        }
+
+        private void titleButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void titleButton_Click_1(object sender, EventArgs e)
+        {
+            nextState = State.Title;
+            tekiCount = 0;
+            itemCount = 0;
+            rightLabel.Text = $"{tekiCount:0}";
+            leftLabel.Text = $"{itemCount:0}";
+            Tama.Left = ClientSize.Width / 2;
+            Tama.Top = ClientSize.Height / 2;
         }
     }
 }
