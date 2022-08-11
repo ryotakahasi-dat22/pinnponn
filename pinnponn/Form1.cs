@@ -110,6 +110,58 @@ namespace pinnponn
             Tama.Left += vvx;
             Tama.Top += vvy;
 
+            if (Tama.Top < 0)
+            {
+                vvy = Math.Abs(vvy);
+            }
+            if (Tama.Bottom > ClientSize.Height)
+            {
+                vvy = -Math.Abs(vvy);
+            }
+
+
+            if((PR.Right >= Tama.Left)
+                && (PR.Bottom >= Tama.Top)
+                && (PR.Top < Tama.Bottom))
+            {
+                vvx = -vvx;
+                vvy = -vvy;
+            }
+
+            if ((EN.Left < Tama.Right)
+                && (PR.Bottom >= Tama.Top)
+                && (PR.Top < Tama.Bottom))
+            {
+                vvx = -vvx;
+                vvy = -vvy;
+            }
+
+            if (Tama.Left < 0)
+            {
+                itemCount += 1;
+            }
+            /*if ((PR.Width >= Tama.Left)
+                && (PR.Width < Tama.Right)
+                && (PR.Height >= Tama.Top)
+                && (PR.Height < Tama.Bottom))
+            {
+                if (Tama.Left < 0)
+                {
+                    vvx = Math.Abs(vvx);
+                }
+                if (Tama.Top < 0)
+                {
+                    vvy = Math.Abs(vvy);
+                }
+                if (Tama.Right > ClientSize.Width)
+                {
+                    vvx = -Math.Abs(vvx);
+                }
+                if (Tama.Bottom > ClientSize.Height)
+                {
+                    vvy = -Math.Abs(vvy);
+                }
+            }*/
 
             /*for (int i = EnemyIndex; i < ChrMax; i++)
             {
@@ -192,10 +244,10 @@ namespace pinnponn
                     vvy = rand.Next(-SpeedMax, SpeedMax + 1);
                     Tama.Visible = true;
 
-                    itemCount = ItemMax - 9;
+                    //itemCount = ItemMax - 9;
                     time = StartTime + 1;
-                    leftLabel.Text = $"{itemCount:00}";
-                    rightLabel.Text = $"{tekiCount:00}";
+                    leftLabel.Text = $"{itemCount:0}";
+                    rightLabel.Text = $"{tekiCount:0}";
 
                     break;
 

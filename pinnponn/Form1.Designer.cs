@@ -113,7 +113,7 @@
             this.Tama.AutoSize = true;
             this.Tama.BackColor = System.Drawing.Color.Gold;
             this.Tama.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Tama.Location = new System.Drawing.Point(139, 177);
+            this.Tama.Location = new System.Drawing.Point(701, 231);
             this.Tama.Name = "Tama";
             this.Tama.Size = new System.Drawing.Size(38, 37);
             this.Tama.TabIndex = 15;
@@ -192,9 +192,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Tama);
             this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.rightLabel);
-            this.Controls.Add(this.Tama);
             this.Controls.Add(this.leftLabel);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.EN);
